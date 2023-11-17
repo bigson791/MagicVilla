@@ -460,19 +460,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DELL\\.nuget\\packages\\": {}
+    "C:\\Users\\eaapen\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj",
+      "projectUniqueName": "C:\\Users\\eaapen\\Source\\Repos\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj",
       "projectName": "MagicVilla_API",
-      "projectPath": "C:\\Users\\DELL\\source\\repos\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj",
-      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DELL\\source\\repos\\MagicVilla\\MagicVilla_API\\obj\\",
+      "projectPath": "C:\\Users\\eaapen\\Source\\Repos\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj",
+      "packagesPath": "C:\\Users\\eaapen\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\eaapen\\Source\\Repos\\MagicVilla\\MagicVilla_API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\eaapen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -526,7 +526,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
