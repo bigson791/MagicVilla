@@ -106,7 +106,7 @@ namespace MagicVilla_API.Controllers
         }
 
         [HttpPut("{id: int}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         //recibe el id a actualizar, y recibe el objeto
