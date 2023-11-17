@@ -105,10 +105,9 @@ namespace MagicVilla_API.Controllers
             return NoContent();
         }
 
-        [HttpPut("{id: int}")]
+        [HttpPut("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         //recibe el id a actualizar, y recibe el objeto
         public IActionResult UpdateVilla(int id, [FromBody] VillaDto villaDto)
         {
@@ -117,12 +116,12 @@ namespace MagicVilla_API.Controllers
             {
                 return BadRequest();
             }
-            var villa = VillaStore.villaList.FirstOrDefault(v=>v.Id == id);
+            var villa = VillaStore.villaList.FirstOrDefault(v => v.Id == id);
             villa.Nombre = villaDto.Nombre;
             villa.Ocupantes = villaDto.Ocupantes;
             villa.MetrosCuadrados = villaDto.MetrosCuadrados;
 
             return NoContent();
-        }
+        }        
     }
 }
