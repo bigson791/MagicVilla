@@ -3,6 +3,7 @@ using MagicVilla_API.Modelos;
 using MagicVilla_API.Modelos.Dto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MagicVilla_API.Controllers
@@ -15,7 +16,7 @@ namespace MagicVilla_API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)] // documentando el codigo de respuesta
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<IEnumerable<VillaDto>> GetVillas()
+        public ActionResult<IEnumerable<villaDto>> GetVillas()
         {
             return Ok(VillaStore.villaList);
 
@@ -24,7 +25,7 @@ namespace MagicVilla_API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)] // documentando el codigo de respuesta
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<VillaDto> GetVilla(int id)
+        public ActionResult<villaDto> GetVilla(int id)
         {
             if (id == 0) // verificando que el id sea 0
             {
@@ -47,7 +48,7 @@ namespace MagicVilla_API.Controllers
         // el atriburo FromBody indica que recibira información.
         // VillaDto hace referencia a la clase del modelo.
         // villaDto es una instancia de la Clase VillaDto.
-        public ActionResult<VillaDto> crearVilla([FromBody] VillaDto villaDto)
+        public ActionResult<villaDto> crearVilla([FromBody] villaDto villaDto)
         {
             if (!ModelState.IsValid)
             {
@@ -105,23 +106,29 @@ namespace MagicVilla_API.Controllers
             return NoContent();
         }
 
-        [HttpPut("{id:int}")]
+
+        //permite actualizar un solo objeto, para este caso se usa en path se usa /nombre, en op se usa "replace" en value se agrega el valor que se desea, 
+        [HttpPatch("{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         //recibe el id a actualizar, y recibe el objeto
-        public IActionResult UpdateVilla(int id, [FromBody] VillaDto villaDto)
+        public IActionResult UpdatePartialVilla(int id, JsonPatchDocument<villaDto> patchDto)
         {
             // se valida que lo recibido por no este nulo y 
-            if (villaDto == null || id != villaDto.Id)
+            if (patchDto == null || id ==  0)
             {
                 return BadRequest();
             }
             var villa = VillaStore.villaList.FirstOrDefault(v => v.Id == id);
-            villa.Nombre = villaDto.Nombre;
-            villa.Ocupantes = villaDto.Ocupantes;
-            villa.MetrosCuadrados = villaDto.MetrosCuadrados;
+ 
+            patchDto.ApplyTo(villa, ModelState);
+
+            if (!ModelState.IsValid) 
+            {
+                return BadRequest(ModelState);
+            }
 
             return NoContent();
-        }        
+        }
     }
 }
