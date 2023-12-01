@@ -12,12 +12,24 @@ namespace MagicVilla_API.Controllers
     [ApiController] // controlador API
     public class VillaController : ControllerBase
     {
+
+        // inyeccion de la dependencia
+        private readonly ILogger<VillaController> _logger;   
+        //se crea un constructor con ctor
+        public VillaController(ILogger<VillaController> logger)
+        {
+            _logger = logger;
+        }
+        // inyeccion de la dependencia 
+
         [HttpGet] //tipo de verbo
         [ProducesResponseType(StatusCodes.Status200OK)] // documentando el codigo de respuesta
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult<IEnumerable<villaDto>> GetVillas()
         {
+            //con loger se puede enviar mensajes de error.
+            _logger.LogInformation("Obtener las villas");
             return Ok(VillaStore.villaList);
 
         }
@@ -29,6 +41,7 @@ namespace MagicVilla_API.Controllers
         {
             if (id == 0) // verificando que el id sea 0
             {
+                _logger.LogInformation("Error al obtener la villa"+id);
                 return BadRequest(); // se retorna el error
             }
             var villa = VillaStore.villaList.FirstOrDefault(v => v.Id == id);
