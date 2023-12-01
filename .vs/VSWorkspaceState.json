@@ -7,6 +7,6 @@
     "\\MagicVilla_API\\Modelos\\Dto",
     "\\MagicVilla_API\\Properties"
   ],
-  "SelectedNode": "\\MagicVilla_API\\Program.cs",
+  "SelectedNode": "\\MagicVilla_API\\Controllers\\VillaController.cs",
   "PreviewInSolutionExplorer": false
 }
