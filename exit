@@ -1,0 +1,77 @@
+[33mcommit a31b7c876ae5cf5152590c01568061da37c41e6c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: eaapen <eaapen@INF30>
+Date:   Thu Feb 8 07:46:58 2024 -0600
+
+    se agrego para evitar conflictos
+
+[33mcommit 1e2686afca9a9b79e2516dead32437d862379241[m
+Author: eaapen <eaapen@INF30>
+Date:   Wed Feb 7 14:21:32 2024 -0600
+
+    agregando la opcion migracion
+
+[33mcommit 47d3abcd1d02f8288cde61707d1e2f1c7dd3b475[m
+Author: eaapen <eaapen@INF30>
+Date:   Tue Feb 6 13:16:31 2024 -0600
+
+    actualizando el proyecto
+
+[33mcommit 0867573a77db5fd415a371b4768adc857f7e6ff6[m
+Author: eaapen <eaapen@INF30>
+Date:   Fri Dec 1 14:47:50 2023 -0600
+
+    Se agrego la cadena de conexion, en appsettings.json
+
+[33mcommit 378cc82fb78afdde0ef6ab43c2ed8c92c5fd1cc1[m
+Author: eaapen <eaapen@INF30>
+Date:   Fri Dec 1 14:00:27 2023 -0600
+
+    Actualizando
+
+[33mcommit 95d36810301258b73648f7e2e7f49eac64258ec5[m
+Author: eaapen <eaapen@INF30>
+Date:   Fri Dec 1 12:49:59 2023 -0600
+
+    agregando _logger, y actualizando las propiedades del modelo villa y villadto
+
+[33mcommit 893e7045878947be838baf3deab8df66269e1eec[m
+Author: eaapen <eaapen@INF30>
+Date:   Thu Nov 30 14:50:29 2023 -0600
+
+    Agregando el endpoint patch, para ello se uso Microsft.AspNetCore.JsonPatch y MicrosoftAspNetCore.Mvc.NewtonsoftJson
+
+[33mcommit 42eef4fff9bf07de1b39131110a62a6957b00eec[m
+Author: eaapen <eaapen@INF30>
+Date:   Fri Nov 17 15:29:07 2023 -0600
+
+    agregando paquetes
+
+[33mcommit 1c81c2c65b102c1d867d5e3543375caee391ec2f[m
+Author: eaapen <eaapen@INF30>
+Date:   Fri Nov 17 15:23:00 2023 -0600
+
+    fix bugs
+
+[33mcommit e389aee3103529af28835cadcbecb871f8bbe79a[m
+Author: eaapen <eaapen@INF30>
+Date:   Fri Nov 17 14:49:45 2023 -0600
+
+    fix bugs
+
+[33mcommit 79b2ef0aab81c02e07b047bd33117a2bb273963d[m
+Author: eaapen <eaapen@INF30>
+Date:   Fri Nov 17 14:46:05 2023 -0600
+
+    Agregando los endpoints post, delete, put
+
+[33mcommit e8b5a6baba6539bec64f17e9f304719dc8eb1fb6[m
+Author: Elfego <eapen.b@outlook.es>
+Date:   Wed Nov 15 00:22:44 2023 -0600
+
+    Agregando los primeros end points
+
+[33mcommit 4c121b46248ca0226811a0812ab3034c8cb8d22a[m
+Author: Elfego <eapen.b@outlook.es>
+Date:   Tue Nov 14 23:01:39 2023 -0600
+
+    Primer commit del proyecto
