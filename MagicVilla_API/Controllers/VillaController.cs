@@ -95,24 +95,8 @@ namespace MagicVilla_API.Controllers
             }*/
             Villa modelo = _mapper.Map<Villa>(createDto);
 
-<<<<<<< HEAD
             await _db.Villas.AddAsync(modelo);
             await _db.SaveChangesAsync();
-=======
-            Villa modelo = new()
-            {
-                Nombre = villaDto.Nombre,
-                Detalle = villaDto.Detalle,
-                ImagenUrl = villaDto.ImagenUrl,
-                Ocupantes = villaDto.Ocupantes,
-                Tarifa = villaDto.Tarifa,
-                MetrosCuadrados = villaDto.MetrosCuadrados,
-                Amenidad = villaDto.Amenidad
-
-            };
-            _db.Villas.Add(modelo);
-            _db.SaveChanges();
->>>>>>> d92efe206f0b036750747f974f3831f19da926b0
            // villaDto.Id = VillaStore.villaList.OrderByDescending(v => v.Id).FirstOrDefault().Id + 1;
            // VillaStore.villaList.Add(villaDto);
             //cuando en la api se crea un nuevo recurso se debe indicar la url de este
@@ -160,21 +144,8 @@ namespace MagicVilla_API.Controllers
                 return BadRequest();
             }
 
-<<<<<<< HEAD
             Villa modelo = _mapper.Map<Villa>(updateDto);
-=======
-            Villa modelo = new()
-            {
-                Id = villaDto.Id,
-                Nombre = villaDto.Nombre,
-                Detalle = villaDto.Detalle,
-                ImagenUrl = villaDto.ImagenUrl,
-                Ocupantes = villaDto.Ocupantes,
-                Tarifa = villaDto.Tarifa,
-                MetrosCuadrados = villaDto.MetrosCuadrados,
-                Amenidad = villaDto.Amenidad
-            };
->>>>>>> d92efe206f0b036750747f974f3831f19da926b0
+
 
             _db.Villas.Update(modelo);
             await _db.SaveChangesAsync();
@@ -196,30 +167,13 @@ namespace MagicVilla_API.Controllers
             {
                 return BadRequest();
             }
-<<<<<<< HEAD
-            var villa = await _db.Villas.AsNoTracking().FirstOrDefaultAsync(v => v.Id == id);
-=======
-            var villa = _db.Villas.AsNoTracking().FirstOrDefault(v => v.Id == id);
 
-            villaDto villaDto = new()
-            {
-                Id =    villa.Id,
-                Nombre = villa.Nombre,
-                Detalle = villa.Detalle,
-                ImagenUrl = villa.ImagenUrl,
-                Ocupantes = villa.Ocupantes,
-                Tarifa = villa.Tarifa,
-                MetrosCuadrados = villa.MetrosCuadrados,
-                Amenidad = villa.Amenidad
-            };
+            var villa = await _db.Villas.AsNoTracking().FirstOrDefaultAsync(v => v.Id == id);
 
             if (villa == null)
             {
                 return BadRequest();
             }
-            patchDto.ApplyTo(villaDto, ModelState);
->>>>>>> d92efe206f0b036750747f974f3831f19da926b0
-
             villaUpdateDto villaDto = _mapper.Map<villaUpdateDto>(villa);
 
 
@@ -234,27 +188,10 @@ namespace MagicVilla_API.Controllers
                 return BadRequest(ModelState);
             }
 
-<<<<<<< HEAD
             Villa modelo = _mapper.Map<Villa>(villaDto);
 
             _db.Villas.Update(modelo);
             await _db.SaveChangesAsync();
-=======
-            Villa modelo = new()
-            {
-                Id = villaDto.Id,
-                Nombre = villaDto.Nombre,
-                Detalle = villaDto.Detalle,
-                ImagenUrl = villaDto.ImagenUrl,
-                Ocupantes = villaDto.Ocupantes,
-                Tarifa = villaDto.Tarifa,
-                MetrosCuadrados = villaDto.MetrosCuadrados,
-                Amenidad = villaDto.Amenidad
-            };
-
-            _db.Villas.Update(modelo);
-            _db.SaveChanges();
->>>>>>> d92efe206f0b036750747f974f3831f19da926b0
             return NoContent();
         }
     }
