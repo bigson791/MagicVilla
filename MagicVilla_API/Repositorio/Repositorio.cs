@@ -19,11 +19,11 @@ namespace MagicVilla_API.Repositorio
         }
         public async Task Crear(T entidad)
         {
-            await dbSet.addAsync(entidad);
+            await dbSet.AddAsync(entidad);
             await Grabar();
         }
 
-        public async Task<T> Grabar()
+        public async Task Grabar()
         {
             await _db.SaveChangesAsync();   
         }
@@ -54,7 +54,7 @@ namespace MagicVilla_API.Repositorio
 
         }
 
-        public async Task<T> Remover(T entidad)
+        public async Task Remover(T entidad)
         {
             dbSet.Remove(entidad);
             await Grabar();
